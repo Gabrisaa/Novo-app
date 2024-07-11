@@ -24,20 +24,15 @@ export default function App() {
     return null
   }
 
-switch(page){
-
-   case 1:
-    return <Slide1 setPage={setPage}/>
-    case 2:
-      return <Slide2 setPage={setPage}/>
-}
 
 return (
-<>
-<Navigation />
-<StatusBar style="auto" />
-</>
-);
+  <>
+  <Navigation />
+  <StatusBar style="auto" />
+  </>
+  );
+
+
  
 }
 

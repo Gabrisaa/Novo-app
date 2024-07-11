@@ -37,6 +37,7 @@ export function Slide2({setPage}:IPage) {
                     <>
                     <Botao onPressI={() => setPage(1)} cor={false} />
                     <Botao onPressI={() => setPage(2)} cor={true} />
+                  
                     </>
 
                 </View>
