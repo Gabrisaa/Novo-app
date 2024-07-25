@@ -5,6 +5,7 @@ container: {
 flex: 1,
 alignItems: "center",
 justifyContent: "center"
+
 },
 title: {
 fontSize: 30,

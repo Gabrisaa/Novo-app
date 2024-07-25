@@ -5,6 +5,8 @@ import { styles } from './styles';
 import { ButtonInterface } from '../../components/ButtonInterface';
 import { LoginTypes } from '../../navigations/login.navigations';
 import { colors } from '../../styles/globalstyle';
+import { useAuth } from '../../hook/auth';
+import { AxiosError } from 'axios';
 
 export interface IAuthenticate {
     email?: string;
@@ -15,7 +17,14 @@ export function Login({ navigation }: LoginTypes) {
     const [data, setData] = useState<IAuthenticate>();
     async function handleSignIn() {
         if (data?.email && data.password) {
-            console.log(data)
+            try{
+                await signIn(data)
+            }catch (error) {
+                const err = error as AxiosError
+                const msg = err.response?.data as string
+                Alert.alert(msg)
+            }
+            setLoading(false)
         } else {
             Alert.alert("Preencha todos os campos!!!");
         }

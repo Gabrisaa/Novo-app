@@ -15,7 +15,7 @@ export function Register({ navigation }: LoginTypes) {
     const [data, setData] = useState<IRegister>();
     async function handleRegister() {
         if (data?.email && data.name && data.password) {
-            console.log(data)
+            setLoading{/* continuar daq*/}
         } else {
             Alert.alert("Preencha todos os campos!!!");
         }
