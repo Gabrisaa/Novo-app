@@ -1,4 +1,4 @@
-import Resct from "react";
+
 import LottieView from "lottie-react-native";
 import React from "react";
 

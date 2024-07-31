@@ -7,13 +7,13 @@ import { useFonts, PaytoneOne_400Regular } from '@expo-google-fonts/paytone-one'
 import { StatusBar } from 'expo-status-bar';
 {/*não funciona, não reconhece a export do navigations*/}
 import { Navigation } from './src/navigations';
+import { AuthProvider } from './src/context/auth';
 
 export interface IPage {
   setPage: Dispatch<SetStateAction<number>>
 }
 
 export default function App() {
-
 
   const [page, setPage] = useState(1)
 
@@ -24,12 +24,13 @@ export default function App() {
     return null
   }
 
-
 return (
   <>
-  <Navigation />
-  <StatusBar style="auto" />
-  </>
+<AuthProvider>
+<Navigation />
+</AuthProvider>
+<StatusBar style="auto" />
+</>
   );
 
 }

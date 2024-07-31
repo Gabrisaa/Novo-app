@@ -3,6 +3,8 @@ import { createStackNavigator, StackNavigationProp } from '@react-navigation/sta
 {/* as unicas coisas exportadas nessas pag do screens tem esse nome*/}
 import { Login } from '../screens/Login';
 import { Register } from '../screens/Register';
+import { Perfil } from '../screens/Perfil';
+
 type LoginStackParamList = {
 Login: undefined
 Register: undefined

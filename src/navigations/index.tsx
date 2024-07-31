@@ -1,11 +1,20 @@
-import * as React from 'react';
- import { NavigationContainer } from '@react-navigation/native';
+import React from "react";
+import { NavigationContainer } from '@react-navigation/native';
 import { LoginNavigation } from "./login.navigations";
-{/* erro aq por causa de algo inexperado(???)*/}
+import { useAuth } from "../hook/auth";
+import { DrawerNavigation } from "./drawer.naviagtion";
+import { Loading } from "../components/Loading";
+
+
 export function Navigation() {
-    return(
-<NavigationContainer>
-< LoginNavigation/>
-</NavigationContainer>
+    const { user, loading} = useAuth()
+    if (loading) {
+    return <Loading />
+    }
+
+return (
+    <NavigationContainer>
+    {user?.token ? <DrawerNavigation /> : <LoginNavigation />}
+    </NavigationContainer>
     )
- }
+}

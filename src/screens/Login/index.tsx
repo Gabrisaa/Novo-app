@@ -12,12 +12,12 @@ export interface IAuthenticate {
     email?: string;
     password?: string;
 }
-{/* pag 1*/}
+
 export function Login({ navigation }: LoginTypes) {
     const [data, setData] = useState<IAuthenticate>();
     async function handleSignIn() {
         if (data?.email && data.password) {
-            try{
+            try {
                 await signIn(data)
             }catch (error) {
                 const err = error as AxiosError

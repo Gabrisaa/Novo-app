@@ -1,6 +1,9 @@
 import React from "react";
 import { createBottomTabNavigator, BottomTabNavigationProp } from "@react-navigation/bottom-tabs";
 import { AntDesign, Ionicons } from '@expo/vector-icons';
+import { Slide1 } from "../screens/Slide1";
+import { Slide2 } from "../screens/Slide2";
+import { Entypo, Feather } from "@expo/vector-icons";
 
 
 type MenuTabParam = {
@@ -17,22 +20,22 @@ export function MenuTabs() {
     const Tab = createBottomTabNavigator<MenuTabParam>();
     return (
         <Tab.Navigator>
-            <Tab.Screen name="Slide1" components={ScreenSlide1}
+            <Tab.Screen name="Slide1" component={Slide1}
                 options={{
                     tabBarIcon: () => (
-                        <AntDesign name="home" size={20} color="black" />
+                        <AntDesign name="home" size={25} color="black" />
                     )
                 }}
             />
-                <Tab.Screen name="Slide2" components={ScreenSlide2}
+                <Tab.Screen name="Slide2" component={Slide2}
                  options={{
                     tabBarIcon: () => (
-                        <Ionicons name="chatbubble" size={20} color="black" />
+                        <Ionicons name="chatbubble" size={25} color="black" />
                     )
                 }}
                 />
         </Tab.Navigator>
-    )
+    );
 }
 
 
