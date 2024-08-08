@@ -7,7 +7,7 @@ export const styles = StyleSheet.create({
         justifyContent: "space-around"
     },
     name: {
-        fontSize: 30,
+        fontSize: 40,
         fontWeight: "bold"
     },
     sociais: {

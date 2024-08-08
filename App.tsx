@@ -3,7 +3,7 @@ import { Dispatch, SetStateAction, useState } from 'react'
 import { Slide2 } from './src/screens/Slide2'
 import { Slide1 } from './src/screens/Slide1'
 import { StyleSheet, Text, View } from 'react-native';
-import { useFonts, PaytoneOne_400Regular } from '@expo-google-fonts/paytone-one';
+import { useFonts,PTSerif_400Regular} from '@expo-google-fonts/pt-serif';
 import { StatusBar } from 'expo-status-bar';
 {/*não funciona, não reconhece a export do navigations*/}
 import { Navigation } from './src/navigations';
@@ -18,7 +18,7 @@ export default function App() {
   const [page, setPage] = useState(1)
 
   let [fontsLoaded] = useFonts({
-    PaytoneOne_400Regular
+   PTSerif_400Regular
   })
   if (!fontsLoaded) {
     return null

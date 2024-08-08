@@ -15,6 +15,7 @@ export interface IAuthenticate {
 
 export function Login({ navigation }: LoginTypes) {
     const [data, setData] = useState<IAuthenticate>();
+    const {signIn,setLoading}=useAuth()
     async function handleSignIn() {
         if (data?.email && data.password) {
             try {
@@ -26,7 +27,7 @@ export function Login({ navigation }: LoginTypes) {
             }
             setLoading(false)
         } else {
-            Alert.alert("Preencha todos os campos!!!");
+            Alert.alert("Preencha todos os campos por favor!!!");
         }
     }
     function handleRegister() {

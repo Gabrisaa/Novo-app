@@ -1,13 +1,14 @@
 import React from "react";
-import { View, Text, FlatList } from "react-native";
+import { View, Text, FlatList, TouchableOpacity } from "react-native";
 import { styles } from "./styles";
 import { useEffect, useState } from "react";
 import { apiMessage } from "../../services/data";
 import { IResponseMessage } from "../../services/data/Message";
 import { useAuth } from "../../hook/auth";
+import  AntDesign from "@expo/vector-icons";
+import { MessageTypes } from "../../navigations/message.navigation";
 
-
-export function Mensagem() {
+export function Mensagem({navigation}: MessageTypes) {
     const [message, setMessage] = useState<IResponseMessage[]>([])
     const { setLoading } = useAuth()
     useEffect(() => {
@@ -17,7 +18,7 @@ export function Mensagem() {
             setMessage(response.data)
         }
         setLoading(false)
-        loadMessage()
+        navigation.addListener("focus", () => loadMessage())
     }, [])
 
     interface itemMessage {
@@ -45,6 +46,8 @@ export function Mensagem() {
                     />
                 )
             }
+            <TouchableOpacity style={styles.item}
+            onPress={() => navigation.navigate("CadMessage")}></TouchableOpacity>
         </View>
     )
 }

@@ -2,7 +2,7 @@ import { useState } from "react";
 import { MessageTypes } from "../../navigations/message.navigation";
 import { Alert, KeyboardAvoidingView, Text, TextInput, View } from "react-native";
 import { colors } from "../../styles/globalstyle";
-import { ComponentButtonInterface } from "../../components";
+import { ButtonInterface } from "../../components/ButtonInterface";
 import { IMessage } from "../../services/data/Message";
 import { useAuth } from "../../hook/auth";
 import { AxiosError } from "axios";
@@ -55,9 +55,9 @@ export function CadMessage({ navigation }: MessageTypes) {
                     onChangeText = {(i) => handleChange({ message: i })}
                 />
             </View >
-            <ComponentButtonInterface title='Enviar' type='primary'
+            <ButtonInterface title='Enviar' type='primary'
                 onPressI={handleCadMessage}/>
-            <ComponentButtonInterface title='Voltar' type='secondary'
+            <ButtonInterface title='Voltar' type='secondary'
              onPressI={() => navigation.navigate("Message")} />
         </KeyboardAvoidingView>
     </View>
