@@ -1,7 +1,5 @@
 import React from 'react';
 import { Dispatch, SetStateAction, useState } from 'react'
-import { Slide2 } from './src/screens/Slide2'
-import { Slide1 } from './src/screens/Slide1'
 import { StyleSheet, Text, View } from 'react-native';
 import { useFonts,PTSerif_400Regular} from '@expo-google-fonts/pt-serif';
 import { StatusBar } from 'expo-status-bar';

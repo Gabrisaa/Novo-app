@@ -1,5 +1,5 @@
 import React from "react";
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import { styles } from "./styles";
 import { useAuth } from "../../hook/auth";
 import { FontAwesome5 } from "@expo/vector-icons";
@@ -14,16 +14,12 @@ export function Perfil() {
             </View>
             <View>
                 <View style={styles.sociais}>
-                    <FontAwesome5 name="facebook" size={24} color="black" />
-                    <Text style={styles.sociaisText}>https://www.facebook.com/</Text>
-                </View>
-                <View style={styles.sociais}>
                     <FontAwesome5 name="instagram" size={24} color="black" />
                     <Text style={styles.sociaisText}>https://www.instagram.com/</Text>
                 </View>
                 <View style={styles.sociais}>
-                    <FontAwesome5 name="linkedin" size={24} color="black" />
-                    <Text style={styles.sociaisText}>https://www.linkedin.com/</Text>
+                    <FontAwesome5 name="twitter" size={24} color="black" />
+                    <Text style={styles.sociaisText}>https://x.com/</Text>
                 </View>
             </View>
             <ButtonInterface title="Sair" type="primary"

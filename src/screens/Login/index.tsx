@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, View, Text, TextInput, Alert } from 'react-native'
+import { KeyboardAvoidingView, View, Text, TextInput, Alert, ImageBackground } from 'react-native'
 import { MaterialIcons, Entypo } from "@expo/vector-icons";
 import { styles } from './styles';
 import { ButtonInterface } from '../../components/ButtonInterface';
@@ -16,6 +16,7 @@ export interface IAuthenticate {
 export function Login({ navigation }: LoginTypes) {
     const [data, setData] = useState<IAuthenticate>();
     const {signIn,setLoading}=useAuth()
+    const fundinho = require("../../assets/fundinho.jpg")
     async function handleSignIn() {
         if (data?.email && data.password) {
             try {
@@ -38,7 +39,7 @@ export function Login({ navigation }: LoginTypes) {
     }
 
         return (
-            <View style={styles.container}>
+            < ImageBackground source={fundinho} style={styles.container}>
                 <KeyboardAvoidingView>
 
                     <Text style={styles.title} >Login</Text>
@@ -72,7 +73,7 @@ export function Login({ navigation }: LoginTypes) {
                     <ButtonInterface title='Cadastre-se'
                         type='secondary' onPressI={handleRegister} />
                 </KeyboardAvoidingView>
-            </View>
+            </ImageBackground>
         );
     }
 

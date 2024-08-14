@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { KeyboardAvoidingView, View, Text, TextInput, Alert } from 'react-native'
+import { KeyboardAvoidingView, View, Text, TextInput, Alert, ImageBackground } from 'react-native'
 import { MaterialIcons, Entypo, Ionicons } from "@expo/vector-icons";
 import { styles } from './styles';
 import { colors } from '../../styles/globalstyle';
@@ -20,6 +20,7 @@ export interface IRegister {
 export function Register({ navigation }: LoginTypes) {
     const [data, setData] = useState<IRegister>();
     const {signIn,setLoading}=useAuth()
+    const fundinho = require("../../assets/dispiei.png")
     async function handleRegister() {
         if (data?.email && data.name && data.password) {
             setLoading(true)
@@ -45,7 +46,7 @@ export function Register({ navigation }: LoginTypes) {
     }
 
     return (
-        <View style={styles.container}>
+        < ImageBackground source={fundinho} style={styles.container}>
             <KeyboardAvoidingView>
                 <Text style={styles.title}>Cadastre-se</Text>
 
@@ -85,7 +86,7 @@ export function Register({ navigation }: LoginTypes) {
                 <ButtonInterface title='Salvar' type='secondary' onPressI={handleRegister} />
         <ButtonInterface title='Voltar' type='primary' onPressI={handleGoBack} />
             </KeyboardAvoidingView >
-              </View > 
+              </ImageBackground > 
 
             );
 }
